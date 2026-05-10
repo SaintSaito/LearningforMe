@@ -1,0 +1,107 @@
+Def for creating functions ex: def *function name*():
+adding a variable in the () gives it a condition to be met
+  EX: def greet_user(user_name):
+    """Display a simple greeting."""
+    print(f"Hello, {user_name.title()}!")
+
+greet_user("Corey")
+
+This prints out: Hello, Corey!
+However this method requires the user name used or if a second statement is added (see below) then the variable has to match the intended output
+EX:print(f"Hello, {user_name.title()}!" 
+          f" I see you're from {city.title()}.")
+THis can be avoided by specifying or assiging the variable in the function call with the one in the def 
+EX: greet_user("Corey", "Seattle")
+greet_user(city="Seattle", user_name="Corey")
+This will get you the same output even though the variables are swapped in the ()
+Another method is to have a preassigned variable
+EX: def greet_user(user_name, city, country="USA"):
+    """Display a simple greeting."""
+    print(f"Hello, {user_name.title()}!" 
+          f" I see you're from {city.title()}, {country}.")
+With country being defined as USA in the (), it will always be USA in the output. Unless it is defined differently in the function call, as the output below shows
+EX: greet_user("Corey", "Seattle")
+greet_user(city="Seattle", user_name="Corey")
+greet_user("Corey", "Seattle", country="Canada")
+
+Hello, Corey! I see you're from Seattle, USA.
+Hello, Corey! I see you're from Seattle, USA.
+Hello, Corey! I see you're from Seattle, Canada.
+
+Return is used in a function to return the value that is created from the function
+EX:
+def get_formatted_name(first_name, last_name):
+    """Return a full name, neatly formatted."""
+    full_name = f"{first_name} {last_name}"
+    return full_name.title()
+
+me = get_formatted_name('saint', 'jackson')
+print(me)
+
+This will return Saint Jackson because the variable me uses the get_formatted_name function to use the .title() function on any variables provided for the get_formatted_name function
+Line 33-36 defines it, take two variables and assigns them to first_name and last_name then assigns them to full_name, finally return assigns the value as the output for the function while also adding the .title() function to the output as well
+in Line 38, me is assigned the get_formatted_name function with the variable provided. With this me gets the output as its assigned variable.
+
+There is also a way to create an if/else within incase a variable needs to be optional
+def get_formatted_name(first_name, last_name, middle_name=''):
+    """Return a full name, neatly formatted."""
+    if middle_name:
+        full_name = f"{first_name} {middle_name} {last_name}"
+    else:
+        full_name = f"{first_name} {last_name}"
+    return full_name.title()
+
+me = get_formatted_name('saint', 'jackson', 'michael')
+print(me)
+
+me = get_formatted_name('saint', 'jackson')
+print(me)   
+
+With this, middle name is the optional and with the if statement, the middle name is added in the middle as defined in Line 49 where as line 57 shows if the middle name isnt defined and instead you get the else defined in line 51. Output below:
+EX:
+Saint Michael Jackson
+Saint Jackson
+
+This can be used with a loop to fill a dictonary or list while also asking for input, see below
+EX:
+def build_person(first_name, last_name, age=None):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
+    if age:
+        person['age'] = age
+    return person
+
+while True:    
+    print("\nWhat is your name:")
+    print("(enter 'q' to quit)")       
+    f_name = input("First name: ")
+    if f_name == 'q':
+        break
+    l_name = input("Last name: ")
+    if l_name == 'q':
+        break
+    age = input("Age (optional): ")
+    if age == 'q':
+        break
+    age = int(age) if age else None
+
+    person = build_person(f_name, l_name, age)
+    print(f"\nWelcome, {person['first']} {person['last']}!")
+
+Line 67-72 uses the build_person function to create a dictonary that will take first name, last name, and age(optional). But lines 74-86 are the loop and work outside of the function to get the input using the a new variable that will input. The loop isn't necessary as the value
+can be used if the variable names in Line 88 are changed to match the ones used in the function. The multiple if statements used in the loop are to give a break statement as the loop is defined with no way to prove a statement false
+**We need to learn Line 86's purpose, Visual studio autofilled it but code works with or without it**
+
+
+The function below is creating loop that will take any number of names defined when the list is defined with names
+def classa(names):
+    """Print the names of classmates."""
+    print("Class A:")
+    for name in names:
+        msg = f"Welcome, {name.title()}!"
+        print(msg)
+
+classnames = ['alice', 'bob', 'charlie']
+classa(classnames)
+
+Line 104 gives the names and line 105 will give the function the names to print out with the message created in line 101
