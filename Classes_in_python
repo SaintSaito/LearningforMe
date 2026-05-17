@@ -26,4 +26,16 @@ The output for this is:
 Subject for New Class
 Name: Alice, Age: 30
 
+With lines 14-18 are methods defined and as long as parameters are set, such as in line 20, you can simply call the method
+
+human1.eat()  # Output: Alice is eating.
+human1.sleep()  # Output: Alice is sleeping.
+
+By adding lines 31 and 32 after line 20, it will use that information and no new info will need to be added. This is how init() works, it saves the data input to give to all methods within the class
+
+human2.eat()
+human2.sleep()
+
+As the class has the definition, you can reuse it with new information. Simply use a different variable to assign it to with the new information as in lines 36-37. Using them all together will give two new lines with Bob
+instead of Alice
 
