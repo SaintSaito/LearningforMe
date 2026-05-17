@@ -1,0 +1,29 @@
+Preface: Classes represent real things and situations and you create objects based on these classes. Classes define general behavior of the object. An object from a class is instantiation and you work with instances of a class
+
+__init__()
+This method is special as it will run everytime regardless of class for any instance of the classs. When listing the parameters in the (), self must be included as this is how it will pass the variables.
+__init__(self, v1, v2):
+With this, we use self.v1 or self.v2 to move the data around the class. Different methods within the class will need the information from init() to build it
+
+Example 1
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def eat(self):
+        print(f"{self.name} is eating.")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping.")
+
+human1 = Human("Alice", 30)
+
+print(f"Subject for New Class")
+print(f" Name: {human1.name}, Age: {human1.age}")
+
+The output for this is:
+Subject for New Class
+Name: Alice, Age: 30
+
+
