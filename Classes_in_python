@@ -72,3 +72,37 @@ Alice is working at Office.
 Bob is eating.
 Bob is working at Home.
 
+                                                    Class Inheritance
+Inheritance allows you to make a sub class that will take methods and parameters from the parent to use.
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.workplace = "Office"
+
+    def eat(self):
+        print(f"{self.name} is eating.")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping.")
+
+    def work(self):
+        print(f"{self.name} is working at {self.workplace}.")
+
+class Child(Human):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+        self.school = "Elementary School"
+    def play(self):
+        print(f"{self.name} is playing.")
+
+human3 = Human("Alice", 30)
+human4 = Child("Bob", 10)
+
+human3.work()
+human4.play()
+
+Lines 92-97 define the inherited class. 92 shows what is inheritaned, 93 is defining it.
+Line 94 uses super(). to call the init() as super(). is a special fuction that allows you to call a method from the parent class. In this case, init is called which gives Child the same parameters in lines 79-81
+A child class method can override a parent class method is they have the same name. However if the subclass has a overriding method defined and called, so long as the parent is called under its own variable,
+it wont be overriden
