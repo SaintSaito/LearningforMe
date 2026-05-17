@@ -39,3 +39,36 @@ human2.sleep()
 As the class has the definition, you can reuse it with new information. Simply use a different variable to assign it to with the new information as in lines 36-37. Using them all together will give two new lines with Bob
 instead of Alice
 
+Classes dont need every parameter placed in the init() only essential if necessary. So long as it is under init() so that a method that uses a parameter can still move the data around
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.workplace = "Office"
+
+    def eat(self):
+        print(f"{self.name} is eating.")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping.")
+
+    def work(self):
+        print(f"{self.name} is working at {self.workplace}.")
+
+human1 = Human("Alice", 30)
+human2 = Human("Bob", 25)
+human2.workplace = "Home"
+
+human1.eat() 
+human1.work() 
+human2.eat()
+human2.work()
+
+Line 44 is the init() and doesnt have workplace as in the () but it is still defined under it and with a default string. Line 59 defines human2 and then line60 defines workplace.
+Lines 63 and 65 call .work() and have different outputs as human1 uses the default and human 2 uses the newly defined
+
+Alice is eating.
+Alice is working at Office.
+Bob is eating.
+Bob is working at Home.
+
