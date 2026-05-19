@@ -116,3 +116,9 @@ human5 = Human("Charlie", 25)
 human5.work()
 
 Line 113 calls the Human class from the Classes1.py file, which allows us to use the Human class we give parameters in Line 115. Then use the .work() in Line 116 to get the output Charlie is working at Office
+All classes in the Classes1 file can be imported with import Classes1 as well as from Classes import *. However the latter method isn't good due to naming conflicts
+Then you can also create an alias to shorten the naming used with from Classes1 import Human as HM, this allows us to use it as so:
+
+human5 = HM("Charlie", 25)
+
+
