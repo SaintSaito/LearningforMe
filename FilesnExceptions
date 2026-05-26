@@ -2,3 +2,4 @@ Python, using the pathlib class, contains a method that allows it to read a file
 However this can be enhanced by using the files full path name(C directory to the filename) 
 ** Be aware that Visual Studio or possibly just Python 3.9 have some built in function that give outputs already "formatted" **
 input() is a function that requests input from user or the code runner to continue the program. It does halt the program until input received 
+WHen working with txt files, python will create a new one if the path given or file called doesn't exist. It also will overwrite any files of the same name if using functions like write_text()
