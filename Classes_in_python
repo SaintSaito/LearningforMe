@@ -122,3 +122,17 @@ Then you can also create an alias to shorten the naming used with from Classes1 
 human5 = HM("Charlie", 25)
 
 
+
+
+
+Special Class Mention:
+Zip()
+Use in any for loop incase you need to call two different variables. EX Below:
+
+nicknames = ["Cyclops", "Wolverine", "Storm", "Phoenix", "Professor_X"]
+normalnames = ["Scott Summers", "Logan", "Ororo Munroe", "Jean Grey", "Charles Xavier"]
+xteam = {}
+for name,names in zip(nicknames, normalnames):
+    xteam[name] = names
+
+Line 135 uses zip() to call from the two lists in Lines 132/133 to place the variables name/names in line 135
